@@ -163,7 +163,6 @@ MediaPlayer.dependencies.Stream = function () {
                     self.debug.log(e);
 
                     mediaSourceArg.removeEventListener("sourceopen", onMediaSourceOpen);
-                    mediaSourceArg.removeEventListener("webkitsourceopen", onMediaSourceOpen);
 
                     callback(mediaSourceArg);
                 };
@@ -171,7 +170,6 @@ MediaPlayer.dependencies.Stream = function () {
             //self.debug.log("MediaSource should be closed. The actual readyState is: " + mediaSourceArg.readyState);
 
             mediaSourceArg.addEventListener("sourceopen", onMediaSourceOpen, false);
-            mediaSourceArg.addEventListener("webkitsourceopen", onMediaSourceOpen, false);
 
             self.mediaSourceExt.attachMediaSource(mediaSourceArg, self.videoModel);
 
@@ -414,7 +412,7 @@ MediaPlayer.dependencies.Stream = function () {
             //self.debug.log("Stream start loading.");
 
             manifest = manifestResult;
-            mediaSourceResult = self.mediaSourceExt.createMediaSource();
+            mediaSourceResult = new MediaSource();
             //self.debug.log("MediaSource created.");
 
             setUpMediaSource.call(self, mediaSourceResult, onMediaSourceSetup);

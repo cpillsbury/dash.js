@@ -18,21 +18,6 @@ MediaPlayer.dependencies.MediaSourceExtensions = function () {
 MediaPlayer.dependencies.MediaSourceExtensions.prototype = {
     constructor: MediaPlayer.dependencies.MediaSourceExtensions,
 
-    createMediaSource: function () {
-        "use strict";
-
-        var hasWebKit = ("WebKitMediaSource" in window),
-            hasMediaSource = ("MediaSource" in window);
-
-        if (hasMediaSource) {
-            return new MediaSource();
-        } else if (hasWebKit) {
-            return new WebKitMediaSource();
-        }
-
-        return null;
-    },
-
     attachMediaSource: function (source, videoModel) {
         "use strict";
 

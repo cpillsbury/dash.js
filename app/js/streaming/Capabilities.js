@@ -21,10 +21,9 @@ MediaPlayer.utils.Capabilities.prototype = {
     supportsMediaSource: function () {
         "use strict";
 
-        var hasWebKit = ("WebKitMediaSource" in window),
-            hasMediaSource = ("MediaSource" in window);
+        var hasMediaSource = ("MediaSource" in window);
 
-        return (hasWebKit || hasMediaSource);
+        return hasMediaSource;
     },
 
     supportsMediaKeys: function () {

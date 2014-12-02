@@ -27,6 +27,7 @@ module.exports = function(grunt) {
             "app/lib/xml2json.js",
             "app/lib/objectiron.js",
             "app/lib/dijon.js",
+            "app/lib/mse.js",
             "app/js/*/**/*.js"]
         }
       },
@@ -39,6 +40,7 @@ module.exports = function(grunt) {
             "./app/lib/Math.js",
             "./app/lib/long.js",
             "./app/lib/base64.js",
+            "app/lib/mse.js",
             "./app/js/streaming/MediaPlayer.js",
             "./app/js/streaming/Context.js",
             "./app/js/dash/Dash.js",
